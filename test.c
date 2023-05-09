@@ -1,10 +1,11 @@
 #include <stdio.h>
 
+FILE* logging_file;
 #define SLOG_OUT logging_file
 #include "slog.h"
 
 int main () {
-	FILE* logging_file = fopen ("log.txt", "wb");
+	logging_file = fopen ("log.txt", "wb");
 
 	SLOG_ERROR("testing", "it's an error message");
 	SLOG_FAILED_FILE("testing", "that's what it logs for FILEs");
