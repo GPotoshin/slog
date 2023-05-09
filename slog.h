@@ -73,8 +73,8 @@
 #define SLOG_FN_CALL(source, fn_name)					fputs \
 	(SLOG_INFO_COLOR "function call" SLOG_RESET "[" source "]: " fn_name ".\n", SLOG_OUT)
 
-#define SLOG_SYNTAX_ERROR(source, line, message, word)	fputs \
-	(SLOG_ERROR_COLOR "syntax error" SLOG_RESET "[" source ":" #line "]: " message  " " SLOG_MESSAGE_COLOR word SLOG_RESET "!\n", SLOG_OUT)
+#define SLOG_SYNTAX_ERROR(source, line, message, word)	fprintf \
+	(SLOG_OUT, SLOG_ERROR_COLOR "syntax error" SLOG_RESET "[" source ":%d]: " message  " " SLOG_MESSAGE_COLOR word SLOG_RESET "!\n", line)
 
 #define SLOG_WARNING(source, warning)					fputs \
 	(SLOG_WARNING_COLOR "warning" SLOG_RESET "[" source "]: " warning "!\n", SLOG_OUT)
