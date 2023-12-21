@@ -1,0 +1,6 @@
+[31merror[0m[testing]: it's an error message!
+[31merror[0m[testing]: can't open [33mthat's what it does for FILEs[0m!
+[34minfo[0m[testing]: that's how info log looks like.
+[34mfunction call[0m[testing]: some times it's useful to log function calls.
+[31msyntax error[0m[testing:20]: in parsing you might want to log syntax errors[33mword with error[0m!
+[35mwarning[0m[testing]: C is dangerous, but it's punk!

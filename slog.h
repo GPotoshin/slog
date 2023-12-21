@@ -57,11 +57,11 @@
 
 #ifndef NERROR
 #define SLOG_ERROR(source, error)						fprintf \
-	(SLOG_OUT, SLOG_ERROR_COLOR "error" SLOG_RESET "[%s]: %s!\n", source, error)
+	(SLOG_OUT, SLOG_ERROR_COLOR "error" SLOG_RESET "[%s]: %s\n", source, error)
 
 #define SLOG_FAILED_FILE(source, filename)				fprintf \
 	(SLOG_OUT, SLOG_ERROR_COLOR "error" SLOG_RESET "[%s]: can't open " \
-	 SLOG_MESSAGE_COLOR "%s" SLOG_RESET "!\n", source, filename)
+	 SLOG_MESSAGE_COLOR "%s" SLOG_RESET "\n", source, filename)
 #else
 #define SLOG_ERROR(source, error)
 #define SLOG_FAILED_FILE(source, filename)
@@ -69,16 +69,19 @@
 
 #if !defined(NLOG) && !defined(NERROR)
 #define SLOG_INFO(source, info)							fprintf \
-	(SLOG_OUT, SLOG_INFO_COLOR "info" SLOG_RESET "[%s]: %s.\n", source, info)
+	(SLOG_OUT, SLOG_INFO_COLOR "info" SLOG_RESET "[%s]: %s\n", source, info)
 
 #define SLOG_FN_CALL(source, fn_name)					fprintf \
-	(SLOG_OUT, SLOG_INFO_COLOR "function call" SLOG_RESET "[%s]: %s.\n", source, fn_name)
+	(SLOG_OUT, SLOG_INFO_COLOR "function call" SLOG_RESET "[%s]: %s\n", source,\
+     fn_name)
 
 #define SLOG_SYNTAX_ERROR(source, line, message, word)	fprintf \
-	(SLOG_OUT, SLOG_ERROR_COLOR "syntax error" SLOG_RESET "[%s:%d]: %s" SLOG_MESSAGE_COLOR "%s" SLOG_RESET "!\n", source, line, message, word)
+	(SLOG_OUT, SLOG_ERROR_COLOR "syntax error" SLOG_RESET "[%s:%d]: %s" \
+     SLOG_MESSAGE_COLOR "%s" SLOG_RESET "\n", source, line, message, word)
 
 #define SLOG_WARNING(source, warning)					fprintf \
-	(SLOG_OUT, SLOG_WARNING_COLOR "warning" SLOG_RESET "[%s]: %s!\n", source, warning)
+	(SLOG_OUT, SLOG_WARNING_COLOR "warning" SLOG_RESET "[%s]: %s\n", source, \
+     warning)
 #else
 #define SLOG_INFO(source, info)
 #define SLOG_FN_CALL(source, fn_name)
