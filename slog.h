@@ -76,7 +76,7 @@
      fn_name)
 
 #define SLOG_SYNTAX_ERROR(source, line, message, word)	fprintf \
-	(SLOG_OUT, SLOG_ERROR_COLOR "syntax error" SLOG_RESET "[%s:%d]: %s" \
+	(SLOG_OUT, SLOG_ERROR_COLOR "syntax error" SLOG_RESET "[%s:%d]: %s " \
      SLOG_MESSAGE_COLOR "%s" SLOG_RESET "\n", source, line, message, word)
 
 #define SLOG_WARNING(source, warning)					fprintf \
