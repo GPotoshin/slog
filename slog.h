@@ -67,7 +67,7 @@
 #define SLOG_FAILED_FILE(source, filename)
 #endif
 
-#if !defined(NLOG) && !defined(NERROR)
+#if !defined(NLOG) && !defined(NERROR) && !defined(NDEBUG)
 #define SLOG_INFO(source, info)							fprintf \
 	(SLOG_OUT, SLOG_INFO_COLOR "info" SLOG_RESET "[%s]: %s\n", source, info)
 
